@@ -38,4 +38,17 @@ Source: order_detail, sku_detail
 
 #### SOME ANALYSIS & INSIGHT
 **Answer number 1**
+
 ![Data_analysis_SQL\hasilquery1.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery1.jpg)
+
+
+**Insight**:Based on the data obtained, August (the 8th month) in 2021 recorded the highest total transaction amount, totaling 227,862,744 or 17.22% of the total transactions for 2021 (1,322,726,912).
+
+**Answer number 2**
+
+![Data_analysis_SQL\hasilquery2.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery2.jpg)
+
+**Answer number 3**
+
+![Data_analysis_SQL\hasilquery1.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery3.jpg)
+
