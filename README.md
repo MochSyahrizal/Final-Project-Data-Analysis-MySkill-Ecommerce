@@ -20,7 +20,7 @@ This project leverages various tools and technologies across data extraction, an
 Each tool played a unique role in facilitating the end-to-end data analysis process, from data extraction to final reporting and visualization. Together, they provided a comprehensive solution for understanding and presenting business insights effectively.
 
 ## PROJECT HIGHLIGHTS
-### DATA ANALYSIS USING SQL IN POSTGRESQL
+### 1. DATA ANALYSIS USING SQL IN POSTGRESQL
 For detail explanation in Bahasa, you can check here :
 [FINAL PROJECT SQL MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/FINAL%20PROJECT%20SQL%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
 
@@ -118,3 +118,10 @@ FROM penjualan_tahunan
 
 
 **Insight** : Based on the data obtained, the categories that showed an increase in 2022 compared to 2021 include Mobiles & Tablets, Entertainment, Appliances, Men’s Fashion, Computing, Home & Living, Health & Sport, Women’s Fashion, School & Education, Superstore, Soghaat, Kids & Baby, and Beauty & Grooming. On the other hand, the categories that experienced a decline were Others and Books.
+
+### 2. DATA ANALYSIS USING PYTHON IN GOOGLE COLAB (JUPYTER NOTEBOOK)
+For detail explanation in Bahasa, you can check here :
+[FINAL PROJECT PYTHON MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/FINAL%20PROJECT%20PYTHON%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
+
+And for full query you can check here :
+[SQL Query File](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/query%20exercise%20%20finpro%20sql.sql)
