@@ -24,6 +24,9 @@ Each tool played a unique role in facilitating the end-to-end data analysis proc
 For detail explanation in Bahasa, you can check here :
 [FINAL PROJECT SQL MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/FINAL%20PROJECT%20SQL%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
 
+And for full query you can check here :
+[SQL Query File](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/query%20exercise%20%20finpro%20sql.sql)
+
 #### QUESTIONS
 1. In 2021, in which month was the highest total transaction value (after_discount) recorded? Use is_valid = 1 to filter transactions.
 Source: order_detail
@@ -38,17 +41,80 @@ Source: order_detail, sku_detail
 
 #### SOME ANALYSIS & INSIGHT
 **Answer number 1**
+```sql
+SELECT
+	EXTRACT (MONTH FROM order_date) AS Transaction_Month,
+	SUM(after_discount) AS Total_Transaction
+FROM order_detail
+WHERE
+	EXTRACT(YEAR FROM order_date) = 2021
+	AND is_valid = 1
+GROUP BY
+	1
+ORDER BY
+	2 DESC
+LIMIT 7
+;
+```
 
 ![Data_analysis_SQL\hasilquery1.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery1.jpg)
 
 
-**Insight**:Based on the data obtained, August (the 8th month) in 2021 recorded the highest total transaction amount, totaling 227,862,744 or 17.22% of the total transactions for 2021 (1,322,726,912).
+**Insight** : Based on the data obtained, August (the 8th month) in 2021 recorded the highest total transaction amount, totaling 227,862,744 or 17.22% of the total transactions for 2021 (1,322,726,912).
 
 **Answer number 2**
+```sql
+SELECT
+	sd.category AS Category_Product,
+	SUM(od.after_discount) AS Total_Transaction
+FROM
+	order_detail AS od
+	LEFT JOIN sku_detail AS sd ON od.sku_id = sd.id
+WHERE
+	EXTRACT(YEAR FROM od.order_date) = 2022
+	AND is_valid = 1
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 7;
+```
 
 ![Data_analysis_SQL\hasilquery2.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery2.jpg)
 
-**Answer number 3**
+**Insight** : Based on the data obtained, the Mobile & Tablets category recorded the highest transaction value throughout 2022, with a total transaction amount of 918,451,576, accounting for 39.17% of the total transactions in 2022 (2,344,848,413).
 
+**Answer number 3**
+```sql
+WITH penjualan_tahunan AS (
+	SELECT
+		sd.category AS kategori,
+		SUM(CASE WHEN EXTRACT(YEAR from od.order_date) = 2021 then after_discount END) AS total_sales_2021,
+		SUM(CASE WHEN EXTRACT(YEAR from od.order_date) = 2022 then after_discount END) AS total_sales_2022,
+		SUM(CASE WHEN EXTRACT(YEAR from od.order_date) = 2022 then after_discount END)
+		-
+		SUM(CASE WHEN EXTRACT(YEAR from od.order_date) = 2021 then after_discount END) AS perbedaan
+	FROM order_detail AS od
+	LEFT JOIN sku_detail AS sd
+		ON od.sku_id = sd.id
+	WHERE
+		EXTRACT(YEAR from od.order_date) IN (2021,2022)
+		AND od.is_valid = 1
+	GROUP BY sd.category
+	ORDER BY perbedaan DESC
+)
+
+SELECT
+	kategori,
+	total_sales_2021,
+	total_sales_2022,
+	perbedaan,
+	CASE WHEN total_sales_2022 < total_sales_2021 THEN 'Penurunan'
+	ELSE 'Kenaikan'
+	END AS keterangan
+FROM penjualan_tahunan
+;
+
+```
 ![Data_analysis_SQL\hasilquery1.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/hasilquery3.jpg)
 
+
+**Insight** : Based on the data obtained, the categories that showed an increase in 2022 compared to 2021 include Mobiles & Tablets, Entertainment, Appliances, Men’s Fashion, Computing, Home & Living, Health & Sport, Women’s Fashion, School & Education, Superstore, Soghaat, Kids & Baby, and Beauty & Grooming. On the other hand, the categories that experienced a decline were Others and Books.
