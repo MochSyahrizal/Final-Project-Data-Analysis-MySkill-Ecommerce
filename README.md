@@ -22,7 +22,7 @@ Each tool played a unique role in facilitating the end-to-end data analysis proc
 ## PROJECT HIGHLIGHTS
 ### DATA ANALYSIS USING SQL IN POSTGRESQL
 For detail explanation in Bahasa, you can check here :
-[1_EDA_Intro.ipynb](2_Capstone_Project\1_EDA_Intro.ipynb)
+[FINAL PROJECT SQL MYSKILL - MOCHAMAD SYAHRIZAL.pdf](Data_analysis_SQL\FINAL PROJECT SQL MYSKILL - MOCHAMAD SYAHRIZAL.pdf)
 
 #### QUESTIONS
 1. In 2021, in which month was the highest total transaction value (after_discount) recorded? Use is_valid = 1 to filter transactions.
@@ -36,6 +36,6 @@ Source: order_detail, payment_method
 5. Rank the following 5 products by transaction value: Samsung, Apple, Sony, Huawei, Lenovo. Use is_valid = 1 to filter transactions.
 Source: order_detail, sku_detail
 
-#### ANALYSIS & INSIGHTS
+#### SOME ANALYSIS & INSIGHT
 **Answer number 1**
-
+![Data_analysis_SQL\hasilquery1.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/tree/main/Data_analysis_SQL/hasilquery1.jpg)
