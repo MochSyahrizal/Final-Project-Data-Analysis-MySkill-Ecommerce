@@ -18,3 +18,24 @@ This project leverages various tools and technologies across data extraction, an
 - **Looker Studio**: Google Looker Studio (formerly Data Studio) was used to build an interactive dashboard for visualizing key insights. It offers powerful, customizable visualizations and supports multiple data sources, making it ideal for creating a dynamic reporting interface for stakeholders. Looker Studio allowed the integration of various dimensions and metrics to provide an intuitive, user-friendly dashboard experience.
 
 Each tool played a unique role in facilitating the end-to-end data analysis process, from data extraction to final reporting and visualization. Together, they provided a comprehensive solution for understanding and presenting business insights effectively.
+
+## PROJECT HIGHLIGHTS
+### DATA ANALYSIS USING SQL IN POSTGRESQL
+For detail explanation in Bahasa, you can check here :
+[1_EDA_Intro.ipynb](2_Capstone_Project\1_EDA_Intro.ipynb)
+
+#### QUESTIONS
+1. In 2021, in which month was the highest total transaction value (after_discount) recorded? Use is_valid = 1 to filter transactions.
+Source: order_detail
+2. In 2022, which category generated the highest transaction value? Use is_valid = 1 to filter transactions.
+Source: order_detail, sku_detail
+3. Compare transaction values for each category in 2021 and 2022. Identify categories with increased or decreased transaction values from 2021 to 2022. Use is_valid = 1 to filter transactions.
+Source: order_detail, sku_detail
+4. Show the top 5 most popular payment methods used in 2022 (based on total unique orders). Use is_valid = 1 to filter transactions.
+Source: order_detail, payment_method
+5. Rank the following 5 products by transaction value: Samsung, Apple, Sony, Huawei, Lenovo. Use is_valid = 1 to filter transactions.
+Source: order_detail, sku_detail
+
+#### ANALYSIS & INSIGHTS
+**Answer number 1**
+
