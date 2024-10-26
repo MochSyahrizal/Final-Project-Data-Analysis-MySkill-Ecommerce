@@ -180,3 +180,62 @@ plt.show()
 
 
 **Insight** : Data analysis reveals that the five best-selling products in the Mobiles & Tablets category are the Idroid BALRX7-Gold, Idroid BALRX7-Jet Black, Infinix Hot 4-Gold, Samsung Grand Prime Plus-Black, and Infinix Zero 4-Grey. Among these products, the Idroid BALRX7-Gold ranks first, with sales reaching 1,000 units, making it a favorite choice among consumers and a compelling gift for the winners of the Year-End Festival.
+
+
+### 3. DATA VISUALIZATION IN LOOKER STUDIO
+For detail explanation in Bahasa, you can check here :
+[FINAL PROJECT DATA VISUALIZATION MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_visualization_looker_studio/FINAL%20PROJECT%20DATA%20VISUALIZATION%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
+
+And for full dashboard you can check here :
+[LOOKER STUDIO DASHBOARD](https://lookerstudio.google.com/u/0/reporting/fadb76fc-be54-40a1-9ef8-7e31be2900f3)
+
+
+#### REQUIREMENT AND REQUEST
+**Page 2:**
+
+This page can display:
+a. A table containing:
+
+Product Name
+Category
+Before Discount
+After Discount
+Net Profit
+Quantity
+Customer (unique value)
+b. There should be slicers for Order Date, Category, Value Transaction, and Payment.
+
+c. Scorecard:
+
+Before Discount
+After Discount
+Net Profit
+Quantity
+Customer (unique value)
+AOV
+During 2022, display the mobile & tablet categories for which payments have been made via JazzWallet. What are the quantities and customer counts?
+
+Create a chart based on the dashboard from number 2.
+
+Thank you.
+Regards,
+Marketing Team
+
+#### MAKING DASHBOARD
+![Data_visualization_looker_studio\PAGE TWO SKETCH.drawio.png](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_visualization_looker_studio/PAGE%20TWO%20SKETCH.drawio.png)
+
+![Data_visualization_looker_studio\Dashboard page 2 full.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_visualization_looker_studio/Dashboard%20page%202%20full.jpg)
+
+
+#### ANALYSIS AND INSIGHT
+![Data_visualization_looker_studio\answer page 2.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_visualization_looker_studio/answer%20page%202.jpg)
+
+**Insights** : Based on the 2022 dashboard data, there are no customers from the Mobiles & Phones category who chose the JazzWallet payment method. This indicates a need for further analysis to understand why JazzWallet is less popular in this category. The Marketing team needs to evaluate promotional strategies, the information provided, and the benefits offered to JazzWallet users in this category.
+
+On the other hand, after reviewing the data based on date, category, and valid transactions, several other payment methods were found to be frequently used, such as JazzVoucher, COD, Payaxis, Finance Settlement, EasyPay, and Customer Credit. Interestingly, JazzVoucher recorded the highest number of orders with 1,000 units, despite being from only one order. Further investigation is needed to determine whether this is an anomaly or valid data.
+
+Recommendation: The Marketing team can strengthen JazzWallet promotions in the Mobiles & Phones category by highlighting additional benefits or exclusive discounts. Additionally, further analysis of large transactions using JazzVoucher should be conducted to avoid errors in decision-making or strategies in the future.
+
+![Data_visualization_looker_studio\jazzwallet 2022 CHART.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_visualization_looker_studio/jazzwallet%202022%20CHART.jpg)
+
+**Insights** : The quantity of orders and the number of customers using the JazzWallet payment method in 2022 only show data for the following categories: Superstore, Others, Soghaat, Kids & Baby, and others. There are no entries for the mobile & tablet category.
