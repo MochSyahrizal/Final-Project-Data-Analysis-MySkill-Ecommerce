@@ -121,7 +121,62 @@ FROM penjualan_tahunan
 
 ### 2. DATA ANALYSIS USING PYTHON IN GOOGLE COLAB (JUPYTER NOTEBOOK)
 For detail explanation in Bahasa, you can check here :
-[FINAL PROJECT PYTHON MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/FINAL%20PROJECT%20PYTHON%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
+[FINAL PROJECT PYTHON MYSKILL - MOCHAMAD SYAHRIZAL.pdf](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_python/FINAL%20PROJECT%20PYTHON%20MYSKILL%20-%20MOCHAMAD%20SYAHRIZAL.pdf)
 
 And for full query you can check here :
-[SQL Query File](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_SQL/query%20exercise%20%20finpro%20sql.sql)
+[Full Jupyter Notebook](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_python/Copy_of_Mentoring_Python_DA11.ipynb)
+
+#### ONE OF QUESTION ON THE PROJECT
+Dear Data Analyst,
+
+At the end of this year, the company will be awarding prizes to customers who win the Year-End Festival competition. The Marketing Team needs assistance in determining the estimated prizes to be awarded to the competition winners. These prizes will be selected from the Top 5 Products in the Mobiles & Tablets category throughout 2022, based on the highest sales quantity (valid = 1).
+
+Please assist us by providing this data to the Marketing Team before the end of this month. We thank you in advance for your support.
+
+Regards,
+Marketing Team
+
+#### ANALYSIS AND INSIGHT
+```python
+top5 = pd.DataFrame(
+    df[
+        (df['category'] == 'Mobiles & Tablets') &  # Memfilter kategori 'Mobiles & Tablets'
+        (df['is_valid'] == 1) &  # Memfilter transaksi valid (is_valid = 1)
+        (df['order_date'].dt.year == 2022)  # Memfilter transaksi yang terjadi di tahun 2022
+    ]
+    # Mengelompokkan data berdasarkan SKU (sku_name) dan menjumlahkan qty_ordered
+    .groupby(by=["sku_name"])['qty_ordered']
+    .sum()  # Menjumlahkan total qty_ordered untuk setiap sku_name
+    .sort_values(ascending=False)  # Mengurutkan hasil dari terbesar ke terkecil
+    .head()  # Mengambil 5 SKU dengan jumlah qty_ordered tertinggi
+    .reset_index(name='quantity_order_2022')  # Mengatur ulang indeks dan mengganti nama kolom hasil agregasi
+)
+
+# Menampilkan DataFrame top 5 produk dengan qty_ordered tertinggi di kategori 'Mobiles & Tablets' untuk tahun 2022
+top5
+
+# Mengurutkan DataFrame terlebih dahulu (jika belum)
+top5 = top5.sort_values(by='quantity_order_2022', ascending=False)
+
+# Membuat horizontal bar chart
+top5.plot(
+    x='sku_name',
+    y='quantity_order_2022',
+    kind='barh',
+    grid=True,
+    xlabel='Quantity',
+    ylabel='Product Name',
+    figsize=(12, 6),
+    title='TOP 5 Product'
+)
+
+# Membalik sumbu y agar nilai terbesar di atas
+plt.gca().invert_yaxis()
+
+
+plt.show()
+```
+![Data_analysis_python\syntax no 1 visual result.jpg](https://github.com/MochSyahrizal/Final-Project-Data-Analysis-MySkill-Ecommerce/blob/main/Data_analysis_python/syntax%20no%201%20visual%20result.jpg)
+
+
+**Insight** : Data analysis reveals that the five best-selling products in the Mobiles & Tablets category are the Idroid BALRX7-Gold, Idroid BALRX7-Jet Black, Infinix Hot 4-Gold, Samsung Grand Prime Plus-Black, and Infinix Zero 4-Grey. Among these products, the Idroid BALRX7-Gold ranks first, with sales reaching 1,000 units, making it a favorite choice among consumers and a compelling gift for the winners of the Year-End Festival.
